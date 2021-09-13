@@ -36,7 +36,7 @@ export default function Home({ data }) {
         </p> 
         {
           data.map(path => (
-            <Link href={`/${path.id}`}>
+            <Link key={path.id+"ssg"} href={`/${path.id}`}>
               <a>{path.id}</a>
             </Link>
           ))
@@ -47,7 +47,7 @@ export default function Home({ data }) {
         </p>
         {
           data.map(path => (
-            <Link href={`/ssr/${path.id}`}>
+            <Link key={path.id+"ssr"} href={`/ssr/${path.id}`}>
               <a>{path.id}</a>
             </Link>
           ))
