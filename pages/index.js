@@ -48,7 +48,7 @@ export default function Home({ data }) {
         {
           data.map(path => (
             <Link key={path.id+"ssr"} href={`/ssr/${path.id}`}>
-              <a>{path.id}</a>
+              <a>{path.id} {(path.id === "aws" ? " -> You can try private field here" : "")} </a>
             </Link>
           ))
         }
