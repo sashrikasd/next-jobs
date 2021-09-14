@@ -3,10 +3,10 @@ import styles from '../../styles/Home.module.css'
 
 export async function getServerSideProps({ params }) {
 
-    const { launch } = params;
+    const { job } = params;
 
     try{
-        const res = await fetch(`https://f81l2jaz49.execute-api.us-east-1.amazonaws.com/dev/todos/${launch}`)
+        const res = await fetch(`https://f81l2jaz49.execute-api.us-east-1.amazonaws.com/dev/todos/${job}`)
         const data = await res.json()
     
         if (!data || data.message || data.private ) {
@@ -26,7 +26,7 @@ export async function getServerSideProps({ params }) {
 
 }
 
-export default function Launch({ data }) {
+export default function JobPostSSR({ data }) {
 
     console.log(data)
 

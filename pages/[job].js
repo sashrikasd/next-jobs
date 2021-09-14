@@ -7,7 +7,7 @@ export async function getStaticPaths() {
     const data = await res.json()
   
     const paths = data.map((company) => ({
-      params: { launch: company.id },
+      params: { job: company.id },
     }))
   
     // We'll pre-render only these paths at build time.
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`https://f81l2jaz49.execute-api.us-east-1.amazonaws.com/dev/todos/${params.launch}`)
+    const res = await fetch(`https://f81l2jaz49.execute-api.us-east-1.amazonaws.com/dev/todos/${params.job}`)
     const data = await res.json()
 
   if (!data) {
@@ -30,7 +30,7 @@ export async function getStaticProps({params}) {
   }
 }
 
-export default function Launch({ data }) {
+export default function JobPost({ data }) {
   return (
     <div className={styles.container}>
       <Head>
