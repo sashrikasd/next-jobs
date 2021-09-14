@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
     const array = ["aws", "facebook", "opensea", "coinbase", "tesla", "twitter", "netflix", "google", "paypal", "spacex"]
 

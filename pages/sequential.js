@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
     const res1 = await fetch(`https://f81l2jaz49.execute-api.us-east-1.amazonaws.com/dev/todos/aws`)
     const data1 = await res1.json()
