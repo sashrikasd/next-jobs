@@ -33,10 +33,10 @@ export default function Home({ data }) {
 
         <p className={styles.description}>
           Below are static generated pages
-        </p> 
+        </p>
         {
           data.map(path => (
-            <Link key={path.id+"ssg"} href={`/${path.id}`}>
+            <Link key={path.id + "ssg"} href={`/${path.id}`}>
               <a>{path.id}</a>
             </Link>
           ))
@@ -47,11 +47,26 @@ export default function Home({ data }) {
         </p>
         {
           data.map(path => (
-            <Link key={path.id+"ssr"} href={`/ssr/${path.id}`}>
+            <Link key={path.id + "ssr"} href={`/ssr/${path.id}`}>
               <a>{path.id} {(path.id === "aws" ? " -> You can try private field here" : "")} </a>
             </Link>
           ))
         }
+
+        <p className={styles.description}>
+          Below page does 10 parallel API calls
+        </p>
+        <Link key={"parallel"} href={`/parallel`}>
+          <a> 10 parallel API calls</a>
+        </Link>
+
+        <p className={styles.description}>
+          Below page does 4 sequential API calls
+        </p>
+        <Link key={"sequesntion"} href={`/sequential`}>
+          <a> 4 sequential API calls</a>
+        </Link>
+
       </main>
     </div>
   )
